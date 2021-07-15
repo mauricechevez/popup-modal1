@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/close.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Modal 1</title>
+</head>
+<body>
+<header class="page-header">
+    <div class="logo">
+        Bhad Sneakers
+    </div>
+</header>
+<button onclick="activateModal" class="btn-modal">Here is a button</button>
+<div>
+    <p>I do not collect any information in the modal. You can see the code in the repository</p>
+</div>
+<main>
+    
+    Content Section
+</main>
+
+<!-- Modal Section -->
+<section class="email-modal">
+    <div class="email-modal__close-btn" onclick="closeModal">
+        <i class="gg-close"></i>
+    </div>
+    <div class="email-modal__container">
+        <!-- Column 1 -->
+        <div class="email-modal__info">
+            <div class="logo" style="margin-bottom: 30px;">
+                Bhad Sneakers
+            </div>
+            <h2 style="padding-bottom: 10px;">Don't miss this chance to save 80%!</h2>
+            <h3 style="padding-bottom: 25px;"> Amazing quality at amazing prices!</h3>
+            <form class="email-modal__form-group">
+                <input type="email" placeholder="Enter your email address" class="email-modal__input-field"></input>
+                <button type="button" class="email-modal__button">Submit</button>
+            </form>
+            <!--Declines offer-->
+            <div class="email-modal__decline-offer">I'm not interested in saving money</div>
+        
+        </div>
+        <div class="email-modal__image-column">
+            <img class="email-modal__image" src="./img/fake-jordans.jpg" alt="Bhad Sneakers"/>
+        </div>
+        <div class="email-thankyou">
+            <div class="email-thankyou__title">
+                Thank You!
+            </div>
+            <p class="email-thankyou__msg">You're on your way to great savings! Check your inbox for the coupon code.</p>
+        </div>
+    </div>
+
+
+        <!-- Column 2 -->
+
+</section>
+
+<script src="./js/index.js"></script>
+</body>
+</html>
