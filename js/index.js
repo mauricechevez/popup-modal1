@@ -23,11 +23,10 @@ let removeErrors = ()=>{
 
 
 /* ########### Functions ############# */
-const activateModal = (e)=>{
+const activateModal = ()=>{
     if(modalActivate === false){
         modalActivate = true
         emailModal.classList.add('email-modal--visible')
-        console.log('Modal active')
     }
     else return;
 }
@@ -44,7 +43,7 @@ const closeModal  = function(){
 }
 
 
-/* ########### Event Listners ########### */
+/* ########### Event Listeners ########### */
 emailModalCloseButton.addEventListener('click', ()=>{
     closeModal();
 })
