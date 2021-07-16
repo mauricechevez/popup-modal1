@@ -1,14 +1,39 @@
+window.onload = function(){
+
 // Query Selectors
 const emailModal = document.querySelector('.email-modal')
-const btn = document.querySelector('.btn-modal')
+// const btn = document.querySelector('.btn-modal')
 const emailModalCloseButton = document.querySelector('.email-modal__close-btn')
 const emailDeclineOffer = document.querySelector('.email-modal__decline-offer')
+const bodyOfSite = document.body
+const emailInvalidMsg = document.querySelector('.email-modal__invalid-message')
+const emailInputBox = document.querySelector('.email-modal__input-field')
+const submitButton = document.querySelector('.email-modal__button')
 
 
-// Functions
+let modalActivate = false
+
+
+/* ########### Functions ############# */
 const activateModal = (e)=>{
-    emailModal.classList.add('email-modal--visible')
-    console.log('Modal active')
+    if(modalActivate === false){
+        modalActivate = true
+        emailModal.classList.add('email-modal--visible')
+        console.log('Modal active')
+    }
+    else return;
+}
+
+// Validation of the Email
+function validateEmail(mail) 
+{
+ if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+  {
+      console.log('Thanks for your email')
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
 }
 
 const closeModal  = function(){
@@ -16,13 +41,7 @@ const closeModal  = function(){
     console.log('Modal removed')
 }
 
-// Event Listner
-btn.addEventListener('click', ()=>{
-    activateModal()
-    console.log('Button Clicked')
-    
-})
-
+/* ########### Event Listners ########### */
 emailModalCloseButton.addEventListener('click', ()=>{
     closeModal();
 })
@@ -30,5 +49,16 @@ emailModalCloseButton.addEventListener('click', ()=>{
 emailDeclineOffer.addEventListener('click', ()=>{
     closeModal();
 })
+
+bodyOfSite.addEventListener('mouseleave', ()=>{
+    activateModal()
+})
+
+submitButton.addEventListener('click', ()=>{
+    validateEmail(emailInputBox.value)
+})
+
+}
+
 
 

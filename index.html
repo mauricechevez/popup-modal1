@@ -19,13 +19,14 @@
         Bhad Sneakers
     </div>
 </header>
-<button onclick="activateModal" class="btn-modal">Here is a button</button>
+<!-- <button onclick="activateModal" class="btn-modal">Activate the Modal - click here</button> -->
 <div>
-    <p>I do not collect any information in the modal. You can see the code in the repository</p>
+    <p>I <b>do not collect</b> any information in the modal, including the email. Please check repository for code</p>
+    <p>Modal will open when you hover your mouse away from the entire window (window.document)</p>
 </div>
 <main>
     
-    Content Section
+    Best Sneakers Ever!
 </main>
 
 <!-- Modal Section -->
@@ -41,9 +42,10 @@
             </div>
             <h2 style="padding-bottom: 10px;">Don't miss this chance to save 80%!</h2>
             <h3 style="padding-bottom: 25px;"> Amazing quality at amazing prices!</h3>
+            <div class="email-modal__invalid-message"><p>This is an invalid email address. Please try again.</p></div>
             <form class="email-modal__form-group">
                 <input type="email" placeholder="Enter your email address" class="email-modal__input-field"></input>
-                <button type="button" class="email-modal__button">Submit</button>
+                <button type="button" class="email-modal__button" onclick="validateEmail">Submit</button>
             </form>
             <!--Declines offer-->
             <div class="email-modal__decline-offer">I'm not interested in saving money</div>
