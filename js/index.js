@@ -11,15 +11,19 @@ let emailInputBox = document.querySelector('.email-modal__input-field')
 const submitButton = document.querySelector('.email-modal__button')
 const emailSuccessMessage = document.querySelector('.email-thankyou')
 let modalActivate = false
-// let errorsActive = false;
+let count=4; // for Timer/Countdown
 
-// console.log(document.getElementsByClassName(''))
-
-let removeErrors = ()=>{
-    document.getElementsByClassName('email-modal__form-group')[0].classList.remove('email-modal__form-group--error')
-    document.getElementsByClassName('email-modal__invalid-message')[0].classList.remove('email-modal__invalid-message--visible')
+/* ########### Countdown Timer to display ########### */
+/* Source : https://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer */
+const counter = ()=>{
+    let countDown = setInterval(function(){
+        document.getElementById('email-thankyou__countdown').innerHTML= `<span>This window will close in ${count} seconds</span>`;
+        count = count -1;
+        if(count < 0){
+            clearInterval(countDown);
+        }
+    }, 1000);
 }
-
 
 
 /* ########### Functions ############# */
@@ -42,6 +46,11 @@ const closeModal  = function(){
     console.log('Modal removed')
 }
 
+const removeErrors = ()=>{
+    document.getElementsByClassName('email-modal__form-group')[0].classList.remove('email-modal__form-group--error')
+    document.getElementsByClassName('email-modal__invalid-message')[0].classList.remove('email-modal__invalid-message--visible')
+}
+
 
 /* ########### Event Listeners ########### */
 emailModalCloseButton.addEventListener('click', ()=>{
@@ -59,6 +68,7 @@ bodyOfSite.addEventListener('mouseleave', ()=>{
 submitButton.addEventListener('click', (e)=>{
     e.preventDefault(e)
     if(validateEmail(emailInputBox.value)){
+        counter()
         emailSuccessMessage.classList.add('email-thankyou--visible')
         setTimeout(()=>{
             closeModal();

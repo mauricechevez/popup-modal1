@@ -186,8 +186,16 @@ h3{
     transition: opacity .4s ease-in-out .7s;
 }
 
+#email-thankyou__countdown{
+    margin-top: 10px;
+    font-size: .7rem;
+    opacity: 0;
+    transition: opacity .6s ease-in-out .9s;
+}
+
+
 /* Controls animation of Thank You message contents */
-.email-thankyou--visible .email-thankyou__title, .email-thankyou--visible .email-thankyou__msg{
+.email-thankyou--visible .email-thankyou__title, .email-thankyou--visible .email-thankyou__msg, .email-thankyou--visible #email-thankyou__countdown{
     opacity: 1;
 }
 
